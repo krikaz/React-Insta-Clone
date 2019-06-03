@@ -9,12 +9,10 @@ export default function App() {
 	// console.log(dummyData[0]);
 
 	return (
-		<div>
+		<div className="app">
 			{dummyData.map(postObj => (
 				<PostContainer key={uuid()} post={postObj} />
 			))}
 		</div>
 	);
 }
-
-

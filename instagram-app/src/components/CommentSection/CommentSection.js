@@ -7,7 +7,7 @@ export default function CommentSection({ comments }) {
 	// console.log(comments);
 
 	return (
-		<div>
+		<div className="commentSection">
 			{comments.map(comment => (
 				<Comment key={uuid()} username={comment.username} text={comment.text} />
 			))}

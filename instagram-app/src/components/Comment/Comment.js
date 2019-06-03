@@ -6,7 +6,7 @@ export default function Comment({ username, text }) {
 	// console.log(text);
 
 	return (
-		<div>
+		<div className='comment'>
 			<h4>{username}</h4>
 			<p>{text}</p>
 		</div>
