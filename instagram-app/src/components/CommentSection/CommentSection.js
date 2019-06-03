@@ -1,11 +1,10 @@
 import React from 'react';
 import Comment from '../Comment/Comment';
 import uuid from 'uuid';
-
+import PropTypes from 'prop-types';
 
 export default function CommentSection({ comments }) {
 	// console.log(comments);
-
 
 	return (
 		<div>
@@ -15,3 +14,7 @@ export default function CommentSection({ comments }) {
 		</div>
 	);
 }
+
+CommentSection.propTypes = {
+	comments: PropTypes.array.isRequired,
+};

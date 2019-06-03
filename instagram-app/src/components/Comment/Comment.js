@@ -1,11 +1,10 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 export default function Comment({ username, text }) {
-
 	// console.log(username);
-  // console.log(text);
-  
+	// console.log(text);
+
 	return (
 		<div>
 			<h4>{username}</h4>
@@ -13,3 +12,8 @@ export default function Comment({ username, text }) {
 		</div>
 	);
 }
+
+Comment.propTypes = {
+	username: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
+};

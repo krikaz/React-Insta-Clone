@@ -5,8 +5,8 @@ import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
 import uuid from 'uuid';
 
-function App() {
-  // console.log(dummyData[0]);
+export default function App() {
+	// console.log(dummyData[0]);
 
 	return (
 		<div>
@@ -17,4 +17,4 @@ function App() {
 	);
 }
 
-export default App;
+
