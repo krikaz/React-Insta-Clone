@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Comment.css';
 
 export default function Comment({ username, text }) {
 	// console.log(username);
@@ -7,8 +8,8 @@ export default function Comment({ username, text }) {
 
 	return (
 		<div className='comment'>
-			<h4>{username}</h4>
-			<p>{text}</p>
+			<span className='username'>{username}</span>
+			<span className='text'> {text}</span>
 		</div>
 	);
 }

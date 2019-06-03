@@ -10,9 +10,14 @@ export default function App() {
 
 	return (
 		<div className="app">
-			{dummyData.map(postObj => (
-				<PostContainer key={uuid()} post={postObj} />
-			))}
+			<div className="nav">
+        nav
+      </div>
+			<div className="content">
+				{dummyData.map(postObj => (
+					<PostContainer key={uuid()} post={postObj} />
+				))}
+			</div>
 		</div>
 	);
 }

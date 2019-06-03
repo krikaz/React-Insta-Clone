@@ -1,4 +1,25 @@
-.App {
+.app {
+  max-width: 1000px;
+}
+
+.nav {
+  background-color: lightcyan;
+}
+
+.content {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -30,4 +51,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

@@ -2,6 +2,7 @@ import React from 'react';
 import Comment from '../Comment/Comment';
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
+import './CommentSection.css';
 
 export default function CommentSection({ comments }) {
 	// console.log(comments);
