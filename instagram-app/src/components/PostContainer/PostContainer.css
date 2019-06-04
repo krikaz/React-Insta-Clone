@@ -7,10 +7,6 @@
   height: auto;
 }
 
-.postContainer .likes {
-  font-weight: bold;
-}
-
 .user {
   display: flex;
   align-items: center;

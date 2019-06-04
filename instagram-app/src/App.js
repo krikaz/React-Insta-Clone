@@ -13,11 +13,14 @@ export default class App extends React.Component {
 		};
 	}
 	componentDidMount() {}
-	
+
 	render() {
 		return (
 			<div className="app">
-				<div className="nav">nav</div>
+				<div className="nav">
+					<span>Instagram</span>
+					
+					</div>
 				<div className="content">
 					{this.state.data.map(postObj => (
 						<PostContainer key={uuid()} post={postObj} />

@@ -2,6 +2,7 @@ import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
 import './PostContainer.css';
+import Like from '../Like/Like';
 
 export default function PostContainer({ post }) {
 	// console.log(post);
@@ -13,7 +14,8 @@ export default function PostContainer({ post }) {
 				<h2>{post.username}</h2>
 			</div>
 			<img src={post.imageUrl} alt="post" />
-			<p className='likes'>{post.likes} likes</p>
+			{/* <p className='likes'>{post.likes} likes</p> */}
+			<Like likes={post.likes} />
 			<CommentSection comments={post.comments} />
 			<p className='timestamp'>Posted on {post.timestamp}</p>
 		</div>
