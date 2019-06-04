@@ -4,36 +4,50 @@ import uuid from 'uuid';
 import PropTypes from 'prop-types';
 import './CommentSection.css';
 
-const addNewComment = (comment, event, index) => {
-	event.splice(index, 0, comment);
-};
 
 export default class CommentSection extends React.Component {
-	constructor(comments) {
-		super(comments);
+	constructor(props) {
+		super(props);
 		this.state = {
-			comments: comments,
+			comments: this.props.comments,
+			value: '',
 		};
 
-	// console.log(comments);
+    this.handleChange = this.handleChange.bind(this);
+    this.addNewComment = this.addNewComment.bind(this);
+	}
 
+	handleChange(event) {
+		this.setState({ value: event.target.value });
+	}
 
-	return (
-		<div className="commentSection">
-			{comments.map(comment => (
-				<Comment key={uuid()} username={comment.username} text={comment.text} />
-			))}
-			<form onSubmit={addNewComment}>
-				<label>
-					Add comment:
-					<input type="text" name="name" />
-				</label>
-				<input type="submit" value="Submit" />
-			</form>
-		</div>
-	);
+	addNewComment = (event, index) => {
+		// alert('A name was submitted: ' + this.state.value);
+		this.setState({comments: this.props.comments.concat({username:'newguy', text:this.state.value})})
+	};
+
+	render() {
+		return (
+			<div className="commentSection">
+				{this.state.comments.map(comment => (
+					<Comment
+						key={uuid()}
+						username={comment.username}
+						text={comment.text}
+					/>
+				))}
+				<form onSubmit={this.addNewComment}>
+					<label>
+						Add comment:
+						<input type="text" value={this.state.value} onChange={this.handleChange} />
+					</label>
+					<input type="submit" value="Submit" />
+				</form>
+			</div>
+		);
+	}
 }
 
-// CommentSection.propTypes = {
-// 	comments: PropTypes.array.isRequired,
-// };
+CommentSection.propTypes = {
+	comments: PropTypes.array.isRequired,
+};
