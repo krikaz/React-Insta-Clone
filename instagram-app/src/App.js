@@ -5,19 +5,25 @@ import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
 import uuid from 'uuid';
 
-export default function App() {
-	// console.log(dummyData[0]);
-
-	return (
-		<div className="app">
-			<div className="nav">
-        nav
-      </div>
-			<div className="content">
-				{dummyData.map(postObj => (
-					<PostContainer key={uuid()} post={postObj} />
-				))}
+export default class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			data: dummyData,
+		};
+	}
+	componentDidMount() {}
+	
+	render() {
+		return (
+			<div className="app">
+				<div className="nav">nav</div>
+				<div className="content">
+					{this.state.data.map(postObj => (
+						<PostContainer key={uuid()} post={postObj} />
+					))}
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 }

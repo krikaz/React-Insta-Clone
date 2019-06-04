@@ -4,6 +4,10 @@ import uuid from 'uuid';
 import PropTypes from 'prop-types';
 import './CommentSection.css';
 
+const addNewComment = (comment, event, index) => {
+	event.splice(index, 0, comment);
+};
+
 export default function CommentSection({ comments }) {
 	// console.log(comments);
 
@@ -12,6 +16,13 @@ export default function CommentSection({ comments }) {
 			{comments.map(comment => (
 				<Comment key={uuid()} username={comment.username} text={comment.text} />
 			))}
+			<form onSubmit={addNewComment}>
+				<label>
+					Add comment:
+					<input type="text" name="name" />
+				</label>
+				<input type="submit" value="Submit" />
+			</form>
 		</div>
 	);
 }
