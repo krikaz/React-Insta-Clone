@@ -8,8 +8,15 @@ const addNewComment = (comment, event, index) => {
 	event.splice(index, 0, comment);
 };
 
-export default function CommentSection({ comments }) {
+export default class CommentSection extends React.Component {
+	constructor(comments) {
+		super(comments);
+		this.state = {
+			comments: comments,
+		};
+
 	// console.log(comments);
+
 
 	return (
 		<div className="commentSection">
@@ -27,6 +34,6 @@ export default function CommentSection({ comments }) {
 	);
 }
 
-CommentSection.propTypes = {
-	comments: PropTypes.array.isRequired,
-};
+// CommentSection.propTypes = {
+// 	comments: PropTypes.array.isRequired,
+// };
