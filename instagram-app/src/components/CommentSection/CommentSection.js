@@ -21,13 +21,15 @@ export default class CommentSection extends React.Component {
 	}
 
 	addNewComment = (event, index) => {
-		this.setState({
-			comments: this.state.comments.concat({
-				username: 'newguy',
-				text: this.state.value,
-			}),
-			value: '',
-		});
+		if (this.state.value) {
+			this.setState({
+				comments: this.state.comments.concat({
+					username: 'newguy',
+					text: this.state.value,
+				}),
+				value: '',
+			});
+		}
 		event.preventDefault();
 	};
 
