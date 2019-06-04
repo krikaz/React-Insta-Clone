@@ -9,7 +9,7 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: dummyData,
+			data: [],
 			value: '',
 			search: '',
 		};
@@ -18,17 +18,26 @@ export default class App extends React.Component {
 		this.searchUser = this.searchUser.bind(this);
 	}
 
+	componentDidMount() {
+		this.setState({ data: dummyData });
+	}
+
 	handleChange(event) {
 		this.setState({ search: event.target.value });
 	}
 
 	searchUser(event) {
-		this.setState({
-			data: this.state.data.filter(obj => obj.username === this.state.search),
-		});
+		if (!this.state.search) {
+			this.setState({
+				data: dummyData,
+			});
+		} else {
+			this.setState({
+				data: this.state.data.filter(obj => obj.username === this.state.search),
+			});
+		}
+		event.preventDefault();
 	}
-
-	componentDidMount() {}
 
 	render() {
 		return (
