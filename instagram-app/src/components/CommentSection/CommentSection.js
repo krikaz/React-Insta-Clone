@@ -21,7 +21,6 @@ export default class CommentSection extends React.Component {
 	}
 
 	addNewComment = (event, index) => {
-		// alert('A name was submitted: ' + this.state.value);
 		this.setState({
 			comments: this.state.comments.concat({
 				username: 'newguy',

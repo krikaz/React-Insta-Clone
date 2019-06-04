@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import './Comment.css';
 
 export default function Comment({ username, text }) {
-	// console.log(username);
-	// console.log(text);
 
 	return (
 		<div className='comment'>
