@@ -4,7 +4,6 @@ import uuid from 'uuid';
 import PropTypes from 'prop-types';
 import './CommentSection.css';
 
-
 export default class CommentSection extends React.Component {
 	constructor(props) {
 		super(props);
@@ -13,8 +12,8 @@ export default class CommentSection extends React.Component {
 			value: '',
 		};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.addNewComment = this.addNewComment.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.addNewComment = this.addNewComment.bind(this);
 	}
 
 	handleChange(event) {
@@ -23,7 +22,14 @@ export default class CommentSection extends React.Component {
 
 	addNewComment = (event, index) => {
 		// alert('A name was submitted: ' + this.state.value);
-		this.setState({comments: this.props.comments.concat({username:'newguy', text:this.state.value})})
+		this.setState({
+			comments: this.state.comments.concat({
+				username: 'newguy',
+				text: this.state.value,
+			}),
+			value: '',
+		});
+		event.preventDefault();
 	};
 
 	render() {
@@ -39,7 +45,11 @@ export default class CommentSection extends React.Component {
 				<form onSubmit={this.addNewComment}>
 					<label>
 						Add comment:
-						<input type="text" value={this.state.value} onChange={this.handleChange} />
+						<input
+							type="text"
+							value={this.state.value}
+							onChange={this.handleChange}
+						/>
 					</label>
 					<input type="submit" value="Submit" />
 				</form>
