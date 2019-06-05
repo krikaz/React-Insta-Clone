@@ -24,7 +24,7 @@ export default class CommentSection extends React.Component {
 		if (this.state.value) {
 			this.setState({
 				comments: this.state.comments.concat({
-					username: 'newguy',
+					username: Object.keys(window.localStorage)[0],
 					text: this.state.value,
 				}),
 				value: '',
