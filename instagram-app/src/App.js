@@ -5,6 +5,7 @@ import './App.css';
 // import uuid from 'uuid';
 import PostPages from './components/PostContainer/PostPages';
 import WithAuthenticate from './components/Authentification/WithAuthenticate';
+import Login from './components/Login/Login';
 
 const ComponentFromWithAuthenticate = WithAuthenticate(PostPages);
 
@@ -20,7 +21,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<ComponentFromWithAuthenticate />
+				<Login />
 			</div>
 		);
 	}
