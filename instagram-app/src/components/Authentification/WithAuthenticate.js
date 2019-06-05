@@ -11,7 +11,7 @@ export default function WithAuthenticate(FirstComponent) {
 			}
 
 			componentDidMount() {
-				if (window.localStorage['user']) {
+				if (window.localStorage.getItem('user')) {
 					this.setState({ logginIn: true });
 				}
 			}

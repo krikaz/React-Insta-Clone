@@ -7,10 +7,10 @@ import Login from './components/Login/Login';
 const ComponentFromWithAuthenticate = WithAuthenticate(PostPages)(Login);
 
 export default class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {};
+	// }
 
 	render() {
 		return (
