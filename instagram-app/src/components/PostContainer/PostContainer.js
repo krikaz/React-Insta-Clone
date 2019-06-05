@@ -3,10 +3,6 @@ import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
 import './PostContainer.css';
 import Like from '../Like/Like';
-// import Moment from 'react-moment';
-
-// var moment = require('moment');
-// console.log(Moment().format());
 
 export default function PostContainer({ post }) {
 

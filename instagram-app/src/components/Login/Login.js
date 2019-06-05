@@ -19,7 +19,6 @@ export default class Login extends React.Component {
 	}
 
 	login = () => {
-		console.log('loggin in...');
 		window.localStorage.setItem(this.state.username, this.state.password);
 	};
 

@@ -1,8 +1,5 @@
 import React from 'react';
 import './App.css';
-// import dummyData from './dummy-data';
-// import PostContainer from './components/PostContainer/PostContainer';
-// import uuid from 'uuid';
 import PostPages from './components/PostContainer/PostPages';
 import WithAuthenticate from './components/Authentification/WithAuthenticate';
 import Login from './components/Login/Login';
