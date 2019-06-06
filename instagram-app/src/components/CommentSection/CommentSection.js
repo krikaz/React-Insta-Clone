@@ -2,7 +2,6 @@ import React from 'react';
 import Comment from '../Comment/Comment';
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
-import './CommentSection.css';
 
 export default class CommentSection extends React.Component {
 	constructor(props) {

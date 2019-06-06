@@ -1,22 +1,59 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
-import './PostContainer.css';
 import Like from '../Like/Like';
+import styled from 'styled-components';
+
+const ContainerPost = styled.div`
+	margin: 0.5rem;
+	max-width: 350px;
+	background-color: lightcyan;
+`;
+
+const User = styled.div`
+	display: flex;
+	align-items: center;
+`;
+
+const UserDiv = styled.div`
+	width: 50px;
+	height: 50px;
+	margin: 1rem;
+`;
+
+const UserDivImg = styled.img`
+	width: 100%;
+	height: auto;
+`;
+
+const ContainerPostImg = styled.img`
+	width: 100%;
+	height: auto;
+`;
+
+const UserH2 = styled.h2`
+	margin: 1rem;
+`;
+
+const TimeStamp = styled.p`
+	color: grey;
+	opacity: 0.6;
+`;
 
 export default function PostContainer({ post }) {
-
 	return (
-		<div className="postContainer">
-			<div className="user">
-				<div><img src={post.thumbnailUrl} alt="thumbnail" /></div>
-				<h2>{post.username}</h2>
-			</div>
-			<img src={post.imageUrl} alt="post" />
+		<ContainerPost>
+			<User>
+				<UserDiv>
+					<UserDivImg src={post.thumbnailUrl} alt="thumbnail" />
+				</UserDiv>
+				<UserH2>{post.username}</UserH2>
+			</User>
+			<ContainerPostImg src={post.imageUrl} alt="post" />
 			<Like likes={post.likes} />
 			<CommentSection comments={post.comments} />
-			<p className='timestamp'>Posted on {post.timestamp}</p>
-		</div>
+			<TimeStamp>Posted on {post.timestamp}</TimeStamp>
+		</ContainerPost>
 	);
 }
 

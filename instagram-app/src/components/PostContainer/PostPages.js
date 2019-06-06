@@ -1,8 +1,22 @@
 import React from 'react';
-import './PostPages.css';
 import dummyData from '../../dummy-data';
 import PostContainer from './PostContainer';
 import uuid from 'uuid';
+import styled from 'styled-components';
+
+const Navigation = styled.nav`
+	background-color: lightgoldenrodyellow;
+	border-bottom: 1px solid black;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-around;
+`;
+
+const Content = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+`;
 
 export default class PostPages extends React.Component {
 	constructor(props) {
@@ -41,7 +55,7 @@ export default class PostPages extends React.Component {
 	render() {
 		return (
 			<div className="app">
-				<div className="nav">
+				<Navigation>
 					<span>Instagram</span>
 					<form onSubmit={this.searchUser}>
 						<input
@@ -52,12 +66,12 @@ export default class PostPages extends React.Component {
 						/>
 						<input type="submit" value="Submit" />
 					</form>
-				</div>
-				<div className="content">
+				</Navigation>
+				<Content>
 					{this.state.data.map(postObj => (
 						<PostContainer key={uuid()} post={postObj} />
 					))}
-				</div>
+				</Content>
 			</div>
 		);
 	}

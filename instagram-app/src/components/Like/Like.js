@@ -1,5 +1,9 @@
 import React from 'react';
-import './Like.css';
+import styled from 'styled-components';
+
+const Paragraph = styled.p`
+	font-weight: bold;
+`;
 
 export default class Like extends React.Component {
 	constructor(props) {
@@ -17,9 +21,9 @@ export default class Like extends React.Component {
 
 	render() {
 		return (
-			<p className="likes" onClick={this.clickHandler}>
+			<Paragraph onClick={this.clickHandler}>
 				{this.state.likes} likes
-			</p>
+			</Paragraph>
 		);
 	}
 }
