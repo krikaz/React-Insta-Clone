@@ -21,12 +21,7 @@ const UserDiv = styled.div`
 	margin: 1rem;
 `;
 
-const UserDivImg = styled.img`
-	width: 100%;
-	height: auto;
-`;
-
-const ContainerPostImg = styled.img`
+const Img = styled.img`
 	width: 100%;
 	height: auto;
 `;
@@ -45,11 +40,11 @@ export default function PostContainer({ post }) {
 		<ContainerPost>
 			<User>
 				<UserDiv>
-					<UserDivImg src={post.thumbnailUrl} alt="thumbnail" />
+					<Img src={post.thumbnailUrl} alt="thumbnail" />
 				</UserDiv>
 				<UserH2>{post.username}</UserH2>
 			</User>
-			<ContainerPostImg src={post.imageUrl} alt="post" />
+			<Img src={post.imageUrl} alt="post" />
 			<Like likes={post.likes} />
 			<CommentSection comments={post.comments} />
 			<TimeStamp>Posted on {post.timestamp}</TimeStamp>
